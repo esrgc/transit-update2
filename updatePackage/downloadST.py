@@ -5,17 +5,17 @@ import urllib2
 import time
 import sys
 
-location= "/home/john/bin" 
+location= "/home/johntalbot/bin" 
 
 
 logName = "StMain_"+(time.strftime("%d-%m-%y"))+".txt"
 log=open(location+"/"+logName, 'w')
+log.write("From: Oxford Update\nSubject: Shore Transit Update on "+str(time.strftime("%c"))+"\n")
 log.write(time.strftime("%c")+"\n")
 log.write("Download location is: "+location+"\n")
 url= 'http://www.shoretransit.org/esrgc/'
-##"passengers_bystop_HISTORY.csv" ,"passengers_bystopdetails_HISTORY.csv"
 
-file_list=["passenger_types.csv","passengers_bydatesummary.csv","routes.csv","shifts.csv","stops.csv","trips.csv"]
+file_list=["passengers_bystop_HISTORY.csv","passengers_bystopdetails_HISTORY.csv","passenger_types.csv","passengers_bydatesummary.csv","routes.csv","shifts.csv","stops.csv","trips.csv"]
 for i in file_list:
     try:
         u=urllib2.urlopen(url+i)
