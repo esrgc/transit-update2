@@ -1,0 +1,75 @@
+-- ShoreTransit weekly update - (Mondays)
+-- Download here: http://shoretransit.org/esrgc/
+
+---------------------------------------------------------------------------------------------
+
+-- Matice no longer sending transactional data; do complete replace 
+--replace passengers_bystop_7daytrans table
+--delete old
+--DELETE FROM passengers_bystop_7daytrans;
+--insert new
+--COPY passengers_bystop_7daytrans FROM '/home/johntalbot/bin/passengers_bystop_7daytrans.csv' DELIMITER '\' CSV;
+
+--replace passengers_bystopdetails_7daytrans table
+--delete old
+--DELETE FROM passengers_bystopdetails_7daytrans;
+--insert new
+--COPY passengers_bystopdetails_7daytrans FROM '/home/johntalbot/bin/passengers_bystopdetails_7daytrans.csv' DELIMITER '\' CSV;
+
+---------------------------------------------------------------------------------------------
+
+--replace passengers_bystop table
+--delete old
+DELETE FROM passengers_bystop;
+--insert new
+COPY passengers_bystop FROM '/tmp/passengers_bystop_HISTORY.csv' DELIMITER '\' CSV;
+
+
+--replace passengers_bystopdetails table
+--delete old
+DELETE FROM passengers_bystopdetails;
+--insert new
+COPY passengers_bystopdetails FROM '/tmp/passengers_bystopdetails_HISTORY.csv' DELIMITER '\' CSV;
+
+---------------------------------------------------------------------------------------------
+
+--replace passenger_types table
+--delete old
+DELETE FROM passenger_types;
+--insert new 
+COPY passenger_types FROM '/tmp/passenger_types.csv' DELIMITER '\' CSV;
+
+
+--replace routes table
+--delete old
+DELETE FROM routes;
+--insert new
+COPY routes FROM '/tmp/routes.csv' DELIMITER '\' CSV;
+
+
+--replace shifts table
+--delete old
+DELETE FROM shifts;
+--insert new
+COPY shifts FROM '/tmp/shifts.csv' DELIMITER '\' CSV;
+
+--replace stops table
+--delete old
+DELETE FROM stops;
+--insert new
+COPY stops FROM '/tmp/stops.csv' DELIMITER '\' CSV;
+
+
+--replace trips table
+--delete old
+DELETE FROM trips;
+--insert new
+COPY trips FROM '/tmp/trips.csv' DELIMITER '\' CSV;
+
+---------------------------------------------------------------------------------------------
+
+--replace passengers_bydatesummary table
+--delete old
+DELETE FROM passengers_bydatesummary;
+--insert new
+COPY passengers_bydatesummary FROM '/tmp/passengers_bydatesummary.csv' DELIMITER '\' CSV;
