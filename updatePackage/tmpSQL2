@@ -1,1 +1,0 @@
-COPY (SELECT * FROM motorpool_bus105r WHERE "Date" >= '2016-01-25' AND "Date" < '2016-05-23') TO '/var/tmp/motorpool_bus105r.csv' DELIMITER ',' CSV HEADER;
