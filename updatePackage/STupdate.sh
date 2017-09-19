@@ -23,7 +23,7 @@ echo "Done" >>$LOC/log/$logfile
 count=$(wc -l /home/update/transit-update2/log/$logfile)
 expectedCount="14 /home/update/transit-update2/log/$logfile"
 if [ "$count" != "$expectedCount" ]; then
-/usr/sbin/ssmtp johntalbot1215@gmail.com jtalbot1@gulls.salisbury.edu bedobelstein@salisbury.edu elsilva@salisbury.edu tahoang@salisbury.edu < $LOC/log/$logfile
+/usr/sbin/ssmtp esrgc@salisbury.edu bedobelstein@salisbury.edu elsilva@salisbury.edu tahoang@salisbury.edu < $LOC/log/$logfile
 fi
 #$
 ##

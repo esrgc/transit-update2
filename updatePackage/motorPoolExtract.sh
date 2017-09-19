@@ -8,8 +8,8 @@ export PGPASSWORD
 
 function emailCSV(){
 	#/usr/bin/zip /home/update/transit-update2/csvTmp/* testzip
-	/usr/bin/mpack -s "Auto ESRGC update for motorpool busA $1 - $2 - $3" /home/update/transit-update2/csvTmp/motorpool_bus105a.csv johntalbot1215@gmail.com bedobelstein@salisbury.edu esrgc@salisbury.edu CLKirby@salisbury.edu
-        /usr/bin/mpack -s "Auto ESRGC update for motorpool busR $1 - $2 - $3" /home/update/transit-update2/csvTmp/motorpool_bus105r.csv johntalbot1215@gmail.com bedobelstein@salisbury.edu esrgc@salisbury.edu CLKirby@salisbury.edu
+	/usr/bin/mpack -s "Auto ESRGC update for motorpool busA $1 - $2 - $3" /home/update/transit-update2/csvTmp/motorpool_bus105a.csv ELSILVA@Salisbury.edu bedobelstein@salisbury.edu esrgc@salisbury.edu CLKirby@salisbury.edu
+        /usr/bin/mpack -s "Auto ESRGC update for motorpool busR $1 - $2 - $3" /home/update/transit-update2/csvTmp/motorpool_bus105r.csv ELSILVA@Salisbury.edu bedobelstein@salisbury.edu esrgc@salisbury.edu CLKirby@salisbury.edu
 	rm /home/update/transit-update2/csvTmp/*.csv
 	echo "Motorpool complete - $1 - $2 - $3 " >> /home/update/transit-update2/log/motorPoolLog.txt  
 }
